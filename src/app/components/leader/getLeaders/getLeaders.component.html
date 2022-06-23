@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="card">
+    <div class="card-header bg-dark text-white">
+      <h3>Lista De Dirigentes</h3>
+      <button class="btn btn-success float-end" routerLink="/agregarDirigente">Nuevo</button>
+    </div>
+    <div class="card-body">
+      <table class="table table-hover" >
+        <thead>
+          <tr>
+            <th>CI</th>
+            <th>Nombre</th>
+            <th>Apellidos</th>
+						<th>Edad</th>
+						<th>Cargo actual</th>
+            <th>Antiguedad</th>
+            <th>   </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let leader of leaders">
+            <td>{{leader.CI}}</td>
+            <td>{{leader.Name}}</td>
+            <td>{{leader.LastName}}</td>
+						<td>{{leader.Age}} años</td>
+						<td>{{leader.CurrentCharge}}</td>
+            <td>{{leader.CurrentAntiquity}} años</td>
+             <td>
+              <button routerLink="/dirigentes/{{leader.CI}}" class="btn btn-success">Ver</button>
+               <!--<button (click)="Eliminar(persona)" class="btn btn-danger" style="margin-left: 20px">Eliminar</button>  -->
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+</div>

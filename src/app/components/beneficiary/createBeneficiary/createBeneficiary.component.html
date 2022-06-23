@@ -1,0 +1,114 @@
+<div style="width: 500px; margin: auto;">
+  <div class="submit-form">
+    <div *ngIf="!submitted">
+      <div class="form-group">
+        <label for="CI">Carnet de identidad</label>
+        <input
+          type="number"
+          class="form-control"
+          id="CI"
+          required
+          [(ngModel)]="beneficiary.CI"
+          name="CI"
+        />
+      </div>
+
+			<div class="form-group">
+        <label for="Name">Nombres</label>
+        <input
+          type="text"
+          class="form-control"
+          id="Name"
+          required
+          [(ngModel)]="beneficiary.Name"
+          name="Name"
+        />
+      </div>
+
+			<div class="form-group">
+        <label for="LastName">Apellidos</label>
+        <input
+          type="text"
+          class="form-control"
+          id="LastName"
+          required
+          [(ngModel)]="beneficiary.LastName"
+          name="LastName"
+        />
+      </div>
+      
+      <div class="form-group">
+        <label for="Age">Edad</label>
+        <input
+          type="number"
+          class="form-control"
+          id="Age"
+          required
+          [(ngModel)]="beneficiary.Age"
+          name="Age"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="CurrentLevel">Rama</label>
+        <select
+          class="form-control"
+          id="CurrentLevel"
+          required
+          [(ngModel)]="beneficiary.CurrentLevel"
+          name="CurrentLevel"
+        >
+          <option value="Lobato">Lobato</option>
+          <option value="Explorador">Explorador</option>
+          <option value="Pionero">Pionero</option>
+          <option value="Rover">Rover</option>
+        </select>
+      </div>
+
+      
+
+      <div class="form-group">
+        <label for="CurrentAntiquity">Antiguedad</label>
+        <input
+          type="number"
+          class="form-control"
+          id="CurrentAntiquity"
+          required
+          [(ngModel)]="beneficiary.CurrentAntiquity"
+          name="CurrentAntiquity"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="IsRegistered">Esta registrado</label>
+        <input
+          type="boolean"
+          class="form-control"
+          id="IsRegistered"
+          required
+          [(ngModel)]="beneficiary.IsRegistered"
+          name="IsRegistered"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="UnityId">Unidad</label>
+        <input
+          type="number"
+          class="form-control"
+          id="UnityId"
+          required
+          [(ngModel)]="beneficiary.UnityId"
+          name="UnityId"
+        />
+      </div>
+
+      <button (click)="createBeneficiary()" class="btn btn-success">Create</button>
+    </div>
+
+    <div *ngIf="submitted">
+      <h3>Se ha registrado al beneficiario {{createdBeneficiary.Name}} con identificacion {{createdBeneficiary.ci}} </h3>
+      <button class="btn btn-success" routerLink="/beneficiarios">Ver listado</button>
+    </div>
+  </div>
+</div>

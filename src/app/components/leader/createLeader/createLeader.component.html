@@ -1,0 +1,108 @@
+<div style="width: 500px; margin: auto;">
+  <div class="submit-form">
+    <div *ngIf="!submitted">
+      <div class="form-group">
+        <label for="CI">Carnet de identidad</label>
+        <input
+          type="number"
+          class="form-control"
+          id="CI"
+          required
+          [(ngModel)]="leader.CI"
+          name="CI"
+        />
+      </div>
+
+			<div class="form-group">
+        <label for="Name">Nombres</label>
+        <input
+          type="text"
+          class="form-control"
+          id="Name"
+          required
+          [(ngModel)]="leader.Name"
+          name="Name"
+        />
+      </div>
+
+			<div class="form-group">
+        <label for="LastName">Apellidos</label>
+        <input
+          type="text"
+          class="form-control"
+          id="LastName"
+          required
+          [(ngModel)]="leader.LastName"
+          name="LastName"
+        />
+      </div>
+      
+      <div class="form-group">
+        <label for="Age">Edad</label>
+        <input
+          type="number"
+          class="form-control"
+          id="Age"
+          required
+          [(ngModel)]="leader.Age"
+          name="Age"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="CurrentCharge">Rama</label>
+        <input
+          type="text"
+          class="form-control"
+          id="CurrentCharge"
+          required
+          [(ngModel)]="leader.CurrentCharge"
+          name="CurrentCharge"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="CurrentAntiquity">Antiguedad</label>
+        <input
+          type="number"
+          class="form-control"
+          id="CurrentAntiquity"
+          required
+          [(ngModel)]="leader.CurrentAntiquity"
+          name="CurrentAntiquity"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="IsRegistered">Esta registrado</label>
+        <input
+          type="boolean"
+          class="form-control"
+          id="IsRegistered"
+          required
+          [(ngModel)]="leader.IsRegistered"
+          name="IsRegistered"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="UnityId">Unidad</label>
+        <input
+          type="number"
+          class="form-control"
+          id="UnityId"
+          required
+          [(ngModel)]="leader.UnityId"
+          name="UnityId"
+        />
+      </div>
+
+      <button (click)="createLeader()" class="btn btn-success">Create</button>
+    </div>
+
+    <div *ngIf="submitted">
+      <h3>Se ha registrado al beneficiario {{createdLeader.Name}} con identificacion {{createdLeader.ci}} </h3>
+      <button class="btn btn-success" routerLink="/dirigentes">Ver listado</button>
+    </div>
+  </div>
+</div>

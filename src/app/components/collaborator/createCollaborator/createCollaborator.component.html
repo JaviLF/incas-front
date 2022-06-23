@@ -1,0 +1,96 @@
+<div style="width: 500px; margin: auto;">
+  <div class="submit-form">
+    <div *ngIf="!submitted">
+      <div class="form-group">
+        <label for="CI">Carnet de identidad</label>
+        <input
+          type="number"
+          class="form-control"
+          id="CI"
+          required
+          [(ngModel)]="collaborator.CI"
+          name="CI"
+        />
+      </div>
+
+			<div class="form-group">
+        <label for="Name">Nombres</label>
+        <input
+          type="text"
+          class="form-control"
+          id="Name"
+          required
+          [(ngModel)]="collaborator.Name"
+          name="Name"
+        />
+      </div>
+
+			<div class="form-group">
+        <label for="LastName">Apellidos</label>
+        <input
+          type="text"
+          class="form-control"
+          id="LastName"
+          required
+          [(ngModel)]="collaborator.LastName"
+          name="LastName"
+        />
+      </div>
+      
+      <div class="form-group">
+        <label for="Age">Edad</label>
+        <input
+          type="number"
+          class="form-control"
+          id="Age"
+          required
+          [(ngModel)]="collaborator.Age"
+          name="Age"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="ProfesionalLevel">Rama</label>
+        <input
+          type="text"
+          class="form-control"
+          id="ProfesionalLevel"
+          required
+          [(ngModel)]="collaborator.ProfesionalLevel"
+          name="ProfesionalLevel"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="IsRegistered">Esta registrado</label>
+        <input
+          type="boolean"
+          class="form-control"
+          id="IsRegistered"
+          required
+          [(ngModel)]="collaborator.IsRegistered"
+          name="IsRegistered"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="UnityId">Unidad</label>
+        <input
+          type="number"
+          class="form-control"
+          id="UnityId"
+          required
+          [(ngModel)]="collaborator.UnityId"
+          name="UnityId"
+        />
+      </div>
+
+      <button (click)="createCollaborator()" class="btn btn-success">Create</button>
+    </div>
+
+    <div *ngIf="submitted">
+      <h3>Se ha registrado al beneficiario {{createdCollaborator.Name}} con identificacion {{createdCollaborator.ci}} </h3>
+      <button class="btn btn-success" routerLink="/colaboradores">Ver listado</button>
+    </div>
+  </div>
+</div>
